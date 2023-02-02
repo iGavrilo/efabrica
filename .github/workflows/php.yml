@@ -16,5 +16,5 @@
         run: composer validate
       - name: Composer install
         run: composer install
-      - name: PHPStan
+      - name: PHPStan github
         run: make phpstan-github
