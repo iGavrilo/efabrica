@@ -1,0 +1,35 @@
+includes:
+	- extension/extension.neon
+	- system/system.neon
+
+parameters:
+
+application:
+	errorPresenter: Error
+	catchExceptions: false
+	mapping:
+		*: [App, Modules\*, Presenters\*Presenter]
+
+session:
+	expiration: 14 days
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+services:
+    - App\Components\Compiler\ViteFactory(http://localhost:5173, %wwwDir%/manifest.json, TRUE)
+    - App\Router\RouterFactory::createRouter
+
+search:
+    model:
+        in: %appDir%/Model
+        classes:
+            - *Facade
+            - *Repository
+            - *Factory
+    components:
+        in: %appDir%/Components
+        classes:
+            - *Factory

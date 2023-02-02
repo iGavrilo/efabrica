@@ -1,0 +1,46 @@
+{block head}
+    {include parent}
+{/block}
+
+{block content}
+
+    {snippet content}
+        <div class="container">
+            {control employerGrid}
+            <canvas id="employerChart" width="200" height="100"></canvas>
+        </div>
+    {/snippet}
+
+{/block}
+
+{block scripts}
+    {include parent}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script n:syntax="double">
+        function chart() {
+            const ctx = document.getElementById('employerChart');
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: {{$employerGraphData['label']}},
+                    datasets: [{
+                        label: 'Age',
+                        data: {{$employerGraphData['age']}},
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        chart();
+    </script>
+{/block}

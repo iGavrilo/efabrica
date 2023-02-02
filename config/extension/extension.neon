@@ -1,0 +1,18 @@
+extensions:
+	dibi: Dibi\Bridges\Nette\DibiExtension22
+	console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+
+dibi:
+	host: localhost
+	username: root
+	password: root
+	database: e-commerce
+	lazy: true
+
+console:
+	name: E-commerce
+	version: '1.0'
+	catchExceptions: false
+	autoExit: false
+	url: https://example.com
+	lazy: true

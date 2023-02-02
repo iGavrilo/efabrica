@@ -1,0 +1,21 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Property App\\\\Model\\\\Employer\\\\Employer\\:\\:\\$age is never read, only written\\.$#"
+			count: 1
+			path: app/Model/Employer/Employer.php
+
+		-
+			message: "#^Property App\\\\Model\\\\Employer\\\\Employer\\:\\:\\$fullName is never read, only written\\.$#"
+			count: 1
+			path: app/Model/Employer/Employer.php
+
+		-
+			message: "#^Property App\\\\Model\\\\Employer\\\\Employer\\:\\:\\$gender is never read, only written\\.$#"
+			count: 1
+			path: app/Model/Employer/Employer.php
+
+		-
+			message: "#^Property App\\\\Model\\\\Employer\\\\Employer\\:\\:\\$id is never read, only written\\.$#"
+			count: 1
+			path: app/Model/Employer/Employer.php

@@ -1,0 +1,12 @@
+{block head}
+    {include parent}
+{/block}
+
+{block content}
+    {snippet content}
+        <div class="container">
+            <h1>Vytvorenie nového zamestnanca</h1>
+            {control updateEmployerForm}
+        </div>
+    {/snippet}
+{/block}
